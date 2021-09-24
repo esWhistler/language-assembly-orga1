@@ -1,0 +1,21 @@
+{
+    "bundleDependencies": false,
+    "deprecated": false,
+    "name": "language-tad-orga1",
+    "version": "1.0.0",
+    "description": "Sintaxis para el assembly de Orga1",
+    "repository": "https://github.com/esWhistler/AssemblyOrga1",
+    "keywords": [
+        "uba",
+        "orga1",
+        "assembly",
+        "syntax",
+        "highlighting",
+        "grammar"
+    ],
+    "license": "MIT",
+    "bugs": "https://github.com/esWhistler/AssemblyOrga1/issues",
+    "engines": {
+        "atom": ">=1.0.0 <2.0.0"
+    }
+}

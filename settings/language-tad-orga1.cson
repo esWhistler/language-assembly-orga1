@@ -1,0 +1,6 @@
+'.source.asm':
+  'editor':
+      'commentStart': '; '
+      'tabType': "hard"
+  'whitespace':
+      'removeTrailingWhitespace': false
