@@ -1,8 +1,8 @@
 
 # Sintaxis para escribir con el lenguaje de Assembly de Orga1 en Atom
 [![APM](https://img.shields.io/apm/v/language-assembly-orga1)](https://github.com/esWhistler/language-assembly-orga1/blob/main/CHANGELOG)
-[![License](https://img.shields.io/apm/l/language-assembly-orga1)](https://github.com/esWhistler/language-assembly-orga1/blob/main/LICENSE)
-[![Downloads](https://img.shields.io/apm/dm/language-assembly-orga1)](https://atom.io/packages/language-assembly-orga1)
+[![APM](https://img.shields.io/apm/l/language-assembly-orga1))](https://github.com/esWhistler/language-assembly-orga1/blob/main/LICENSE)
+[![APM](https://img.shields.io/apm/dm/language-assembly-orga1)](https://atom.io/packages/language-assembly-orga1)
 
 La sencilla sintaxis de assembly con lo justo y necesario para Orga1. Queria poder escribirlo y que tuviera colorsitos.
 Como no tenia ni idea como hacer esto copie por completo el diseño del paquete para TAD de Algo2 hecho por [luisbustamante097](https://github.com/luisbustamante097/language-tad-aed2). Gracias Luis.
