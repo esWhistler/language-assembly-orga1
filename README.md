@@ -4,8 +4,9 @@
 [![APM](https://img.shields.io/apm/l/language-assembly-orga1?label=license)](https://github.com/esWhistler/language-assembly-orga1/blob/main/LICENSE)
 [![APM](https://img.shields.io/apm/dm/language-assembly-orga1?label=downloads)](https://atom.io/packages/language-assembly-orga1)
 
-La sencilla sintaxis de assembly con lo justo y necesario para Orga1. Queria poder escribirlo y que tuviera colorsitos.
-Como no tenia ni idea como hacer esto copie por completo el diseño del paquete para TAD de Algo2 hecho por [luisbustamante097](https://github.com/luisbustamante097/language-tad-aed2). Gracias Luis.\n
+La sencilla sintaxis de assembly con lo justo y necesario para Orga1. Queria poder escribirlo y que tuviera colorsitos.\
+Como no tenia ni idea como hacer esto copie por completo el diseño del paquete para TAD de Algo2 hecho por [luisbustamante097](https://github.com/luisbustamante097/language-tad-aed2). Gracias Luis.\
+\
 (La versión dice 2.0.2 pero realmente es como 1.0.30, el tema es que le erre y medio que Atom es muy estricto con las versiones y no me deja ir para atrás)
 
 - Desde el [Issues](https://github.com/esWhistler/language-assembly-orga1/issues) del repo me pueden informar acerca de cualquier problema que tengan, y están más que invitados a mandarme un PR con la solución a cualquier bug.
