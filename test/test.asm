@@ -10,6 +10,6 @@ ciclo:  CMP [R0], 0x0000
 				JNE seguir ; Salto a la etiqueta seguir si el elemento no era cero.
 				ADD R1, 0x0001 ; Encontré un cero.
 seguir: ADD R0, 0x0001 ; Avanzo una posición del vector.
-				SUB R2, 0X0001 ; Decremento tamaño del vector (un elemento menos por recorrer).
+				SUB R2, 0x0001 ; Decremento tamaño del vector (un elemento menos por recorrer).
 				JNE ciclo ; Si quedan elementos por recorrer retoma el ciclo
-				MOV [CEROS], R1 ; Terminé de recorrer el vector y almaceno el resultado
+				MOV CEROS, R1 ; Terminé de recorrer el vector y almaceno el resultado
