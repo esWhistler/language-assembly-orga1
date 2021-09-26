@@ -7,7 +7,7 @@
 La sencilla sintaxis de assembly con lo justo y necesario para Orga1. Queria poder escribirlo y que tuviera colorsitos.\
 Como no tenia ni idea como hacer esto copie por completo el diseño del paquete para TAD de Algo2 hecho por [luisbustamante097](https://github.com/luisbustamante097/language-tad-aed2). Gracias Luis.\
 \
-[Demostracion](https://github.com/esWhistler/language-assembly-orga1/blob/master/test/test.asm)\
+![Demostracion](/test/test.png)\
 \
 (La versión dice 2.0.2 pero realmente es como 1.0.30, el tema es que le erre y medio que Atom es muy estricto con las versiones y no me deja ir para atrás)
 
