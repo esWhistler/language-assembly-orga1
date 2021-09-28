@@ -13,3 +13,8 @@ seguir: ADD R0, 0x0001 ; Avanzo una posición del vector.
         SUB R2, 0x0001 ; Decremento tamaño del vector (un elemento menos por recorrer).
         JNE ciclo ; Si quedan elementos por recorrer retoma el ciclo
         MOV CEROS, R1 ; Terminé de recorrer el vector y almaceno el resultado
+
+main: MOV R0, 0x0001
+			ADD R0, [inc]
+			JMP main
+inc:	DW 0x0002

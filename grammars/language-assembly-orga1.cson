@@ -19,33 +19,15 @@ patterns: [
           name: 'markup.bold.asm'
           patterns:[
             { include: '#comment' }
-            {
-              name: 'constant.language.asm'
-              match: '0x[0-9A-F]{4}'
-            }
-            {
-              name: 'variable.asm'
-              match: '(\\[*)[0-9A-Z]+(\\]*)'
-              captures:
-                1: name: 'string.regexp.character-class.asm'
-                2: name: 'string.regexp.character-class.asm'
-            }
+            { include: '#hexaConstant'}
+            { include: '#variable'}
           ]
         3:
           name: 'markup.bold.asm'
           patterns:[
             { include: '#comment' }
-            {
-              name: 'constant.language.asm'
-              match: '0x[0-9A-F]{4}'
-            }
-            {
-              name: 'variable.asm'
-              match: '(\\[*)[0-9A-Z]+(\\]*)'
-              captures:
-                1: name: 'string.regexp.character-class.asm'
-                2: name: 'string.regexp.character-class.asm'
-            }
+            { include: '#hexaConstant'}
+            { include: '#variable'}
           ]
     }
     {
@@ -57,17 +39,8 @@ patterns: [
           name: 'markup.bold.asm'
           patterns:[
             { include: '#comment' }
-            {
-              name: 'constant.language.asm'
-              match: '0x[0-9A-F]{4}'
-            }
-            {
-              name: 'variable.asm'
-              match: '(\\[*)[0-9A-Z]+(\\]*)'
-              captures:
-                1: name: 'string.regexp.character-class.asm'
-                2: name: 'string.regexp.character-class.asm'
-            }
+            { include: '#hexaConstant'}
+            { include: '#variable'}
           ]
     }
     {
@@ -82,6 +55,13 @@ patterns: [
         1: name: 'support.function.asm'
         2: name: 'keyword.control.asm'
     }
+    {
+      comment: 'Directiva'
+      match: '(DW) (0x[0-9A-F]{4})'
+      captures:
+        1: name: 'support.function.asm'
+        2: name: 'constant.language.asm'
+    }
 ]
 
 repository:
@@ -89,4 +69,15 @@ repository:
         comment: 'Comentario del codigo'
         name: 'comment.line.asm'
         match: '\;.*$'
+    }
+    hexaConstant:{
+      name: 'constant.language.asm'
+      match: '0x[0-9A-F]{4}'
+    }
+    variable:{
+      name: 'variable.asm'
+      match: '(\\[*)[0-9A-Z]+(\\]*)'
+      captures:
+        1: name: 'string.regexp.character-class.asm'
+        2: name: 'string.regexp.character-class.asm'
     }
