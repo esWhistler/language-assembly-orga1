@@ -2,7 +2,7 @@
 # R0 –> Dirección del comienzo del vector.
 # R1 –> Cantidad de ceros que voy encontrando en el vector.
 # R2 –> Tamaño del vector a recorrer.
-main:   MOV R0, VECTOR # R0 = dirección donde comienza el vector
+main: 	MOV R0, VECTOR
         MOV R1, 0x0000 # R1 inicializado en 0
         MOV R2, [SIZE] # R2 = tamaño del vector.
 # Chequeo si el elemento del vector (apuntado por R0) es 0.
@@ -13,8 +13,13 @@ seguir: ADD R0, 0x0001 # Avanzo una posición del vector.
         SUB R2, 0x0001 # Decremento tamaño del vector (un elemento menos por recorrer).
         JNE ciclo # Si quedan elementos por recorrer retoma el ciclo
         MOV CEROS, R1 # Terminé de recorrer el vector y almaceno el resultado
+				DW 0x0000
 
-main: MOV R0, 0x0001
-			ADD R0, [inc]
-			JMP main
-inc:	DW 0x0002
+SIZE: 	DW 0x0005
+VECTOR:	DW 0x0001
+				DW 0x0000
+				DW 0x0005
+				DW 0xAD3F
+				DW 0x0000
+				
+CEROS: 	DW 0x0000

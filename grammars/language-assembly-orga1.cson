@@ -6,9 +6,13 @@ limitLineLength: false
 patterns: [
     { include: '#comment' }
     {
-        comment: 'Etiquetas'
-        name: 'keyword.control.asm'
-        match: '^[^\ ]*\:'
+        comment: 'Etiquetado'
+        match: '^([^\ ]*)(\:)'
+        captures:
+          1: patterns: [
+            { include: '#tag'}
+          ]
+          2: name: 'keyword.control.asm'
     }
     {
       comment: 'Funciones con 2 operandos'
@@ -16,16 +20,16 @@ patterns: [
       captures:
         1: name: 'support.function.asm'
         2: patterns:[
-            { include: '#tag'}
-            { include: '#hexaConstant'}
-            { include: '#variable'}
-          ]
+          { include: '#registry'}
+          { include: '#tag'}
+          { include: '#hexaConstant'}
+        ]
         3: name: 'support.function.asm'
-        4:patterns:[
-            { include: '#tag'}
-            { include: '#hexaConstant'}
-            { include: '#variable'}
-          ]
+        4: patterns:[
+          { include: '#registry'}
+          { include: '#tag'}
+          { include: '#hexaConstant'}
+        ]
     }
     {
       comment: 'Funciones con 1 operando'
@@ -33,10 +37,10 @@ patterns: [
       captures:
         1: name: 'support.function.asm'
         2:patterns:[
-            { include: '#tag'}
-            { include: '#hexaConstant'}
-            { include: '#variable'}
-          ]
+          { include: '#registry'}
+          { include: '#tag'}
+          { include: '#hexaConstant'}
+        ]
     }
     {
       comment: 'Funcion return'
@@ -70,9 +74,9 @@ repository:
       name: 'bold.constant.language.asm'
       match: '0x[0-9A-F]{4}'
     }
-    variable:{
-      comment: 'Variables'
-      match: '(\\[*)([0-9A-Z]+)(\\]*)'
+    registry:{
+      comment: 'Registros'
+      match: '(\\[*)(R[0-7])(\\]*)'
       captures:
         1: name: 'string.regexp.character-class.asm'
         2: name: 'bold.variable.asm'
@@ -80,9 +84,20 @@ repository:
     }
     tag:{
       comment: 'Etiquetas'
-      match: '(\\[*)([a-z]+)(\\]*)'
+      match: '(\\[*)([A-Za-z]+)(\\]*)'
       captures:
         1: name: 'string.regexp.character-class.asm'
-        2: name: 'keyword.control.asm'
+        2: patterns:[
+          {
+            comment: 'Variable'
+            name: 'bold.keyword.control.asm'
+            match:'[A-Z]+'
+          }
+          {
+            comment: 'Etiqueta regular'
+            name: 'keyword.control.asm'
+            match: '[A-Za-z]+'
+          }
+        ]
         3: name: 'string.regexp.character-class.asm'
     }
