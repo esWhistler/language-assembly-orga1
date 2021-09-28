@@ -1,5 +1,5 @@
 scopeName: 'source.asm'
-name: 'language-assembly-orga1'
+name: 'Assembly'
 fileTypes: [ 'asm' ]
 limitLineLength: false
 
@@ -63,7 +63,7 @@ repository:
     comment:{
         comment: 'Comentario del codigo'
         name: 'comment.line.asm'
-        match: '\;.*$'
+        match: '#.*$'
     }
     hexaConstant:{
       comment: 'Constantes inmediatas'
