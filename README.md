@@ -8,7 +8,7 @@ La sencilla sintaxis de assembly con lo justo y necesario para Orga1. Queria pod
 Como no tenia ni idea como hacer esto copie por completo el diseño del paquete para TAD de Algo2 hecho por [luisbustamante097](https://github.com/luisbustamante097/language-tad-aed2). Gracias Luis.\
 \
 ![Demostracion](/test/test.png)\
-\
+
 
 - Desde el [Issues](https://github.com/esWhistler/language-assembly-orga1/issues) del repo me pueden informar acerca de cualquier problema que tengan, y están más que invitados a mandarme un PR con la solución a cualquier bug.
 
