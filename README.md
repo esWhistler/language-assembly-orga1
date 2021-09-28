@@ -9,7 +9,7 @@ Como no tenia ni idea como hacer esto copie por completo el diseño del paquete 
 \
 ![Demostracion](/test/test.png)\
 \
-(La versión dice 2.0.2 pero realmente es como 1.0.30, el tema es que le erre y medio que Atom es muy estricto con las versiones y no me deja ir para atrás)
+(La versión dice 2.1.0 pero realmente es como 1.1.0, el tema es que le erre y medio que Atom es muy estricto con las versiones y no me deja ir para atrás)
 
 - Desde el [Issues](https://github.com/esWhistler/language-assembly-orga1/issues) del repo me pueden informar acerca de cualquier problema que tengan, y están más que invitados a mandarme un PR con la solución a cualquier bug.
 

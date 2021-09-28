@@ -12,20 +12,17 @@ patterns: [
     }
     {
       comment: 'Funciones con 2 operandos'
-      match: '(MOV|ADD|SUB|AND|OR|CMP|ADDC)\ +([0-9A-Za-z\\[\\]]+),\ +([0-9A-Za-z\\[\\]]+)'
+      match: '(MOV|ADD|SUB|AND|OR|CMP|ADDC)\ +([0-9A-Za-z\\[\\]]+)(,)\ +([0-9A-Za-z\\[\\]]+)'
       captures:
         1: name: 'support.function.asm'
-        2:
-          name: 'markup.bold.asm'
-          patterns:[
-            { include: '#comment' }
+        2: patterns:[
+            { include: '#tag'}
             { include: '#hexaConstant'}
             { include: '#variable'}
           ]
-        3:
-          name: 'markup.bold.asm'
-          patterns:[
-            { include: '#comment' }
+        3: name: 'support.function.asm'
+        4:patterns:[
+            { include: '#tag'}
             { include: '#hexaConstant'}
             { include: '#variable'}
           ]
@@ -35,10 +32,8 @@ patterns: [
       match: '(NEG|NOT|JMP|CALL)\ +([0-9A-Za-z\\[\\]]+)'
       captures:
         1: name: 'support.function.asm'
-        2:
-          name: 'markup.bold.asm'
-          patterns:[
-            { include: '#comment' }
+        2:patterns:[
+            { include: '#tag'}
             { include: '#hexaConstant'}
             { include: '#variable'}
           ]
@@ -60,7 +55,7 @@ patterns: [
       match: '(DW) (0x[0-9A-F]{4})'
       captures:
         1: name: 'support.function.asm'
-        2: name: 'constant.language.asm'
+        2: name: 'bold.constant.language.asm'
     }
 ]
 
@@ -71,13 +66,23 @@ repository:
         match: '\;.*$'
     }
     hexaConstant:{
-      name: 'constant.language.asm'
+      comment: 'Constantes inmediatas'
+      name: 'bold.constant.language.asm'
       match: '0x[0-9A-F]{4}'
     }
     variable:{
-      name: 'variable.asm'
-      match: '(\\[*)[0-9A-Z]+(\\]*)'
+      comment: 'Variables'
+      match: '(\\[*)([0-9A-Z]+)(\\]*)'
       captures:
         1: name: 'string.regexp.character-class.asm'
-        2: name: 'string.regexp.character-class.asm'
+        2: name: 'bold.variable.asm'
+        3: name: 'string.regexp.character-class.asm'
+    }
+    tag:{
+      comment: 'Etiquetas'
+      match: '(\\[*)([a-z]+)(\\]*)'
+      captures:
+        1: name: 'string.regexp.character-class.asm'
+        2: name: 'keyword.control.asm'
+        3: name: 'string.regexp.character-class.asm'
     }
