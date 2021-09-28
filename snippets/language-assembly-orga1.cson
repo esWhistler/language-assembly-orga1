@@ -65,3 +65,6 @@
     'JVS':
       'prefix': 'JVS'
       'body': 'JVS ${1:ETIQUETA}'
+    'DW':
+      'prefix': 'DW'
+      'body': 'DW ${1:0x0000}'
