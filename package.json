@@ -2,7 +2,7 @@
     "bundleDependencies": false,
     "deprecated": false,
     "name": "language-assembly-orga1",
-    "version": "2.0.2",
+    "version": "2.1.0",
     "description": "Sintaxis para el assembly de Orga1",
     "repository": "https://github.com/esWhistler/language-assembly-orga1",
     "keywords": [
