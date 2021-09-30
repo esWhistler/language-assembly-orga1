@@ -16,7 +16,7 @@ patterns: [
     }
     {
       comment: 'Funciones con 2 operandos'
-      match: '(MOV|ADD|SUB|AND|OR|CMP|ADDC)\ +([0-9A-Za-z\\[\\]]+)(,)\ +([0-9A-Za-z\\[\\]]+)'
+      match: '(MOV|ADD|SUB|AND|OR|CMP|ADDC)\ +([0-9a-zA-Z\\[\\]\\+\ ]*)(,)\ *([0-9a-zA-Z\\[\\]\\+\ ]*)'
       captures:
         1: name: 'support.function.asm'
         2: patterns:[
@@ -33,10 +33,10 @@ patterns: [
     }
     {
       comment: 'Funciones con 1 operando'
-      match: '(NEG|NOT|JMP|CALL)\ +([0-9A-Za-z\\[\\]]+)'
+      match: '(NEG|NOT|JMP|CALL)\ +([0-9a-zA-Z\\[\\]\\+\ ]*)'
       captures:
         1: name: 'support.function.asm'
-        2:patterns:[
+        2: patterns:[
           { include: '#registry'}
           { include: '#tag'}
           { include: '#hexaConstant'}
@@ -49,14 +49,18 @@ patterns: [
     }
     {
       comment: 'Saltos condicionales'
-      match: '(JE|JNE|JLE|JG|JL|JGE|JLEU|JGU|JCS|JNEG|JVS)\ +([a-z]+)'
+      match: '(JE|JNE|JLE|JG|JL|JGE|JLEU|JGU|JCS|JNEG|JVS)\ +([0-9a-zA-Z\\[\\]\\+\ ]*)'
       captures:
         1: name: 'support.function.asm'
-        2: name: 'keyword.control.asm'
+        2: patterns:[
+          { include: '#registry'}
+          { include: '#tag'}
+          { include: '#hexaConstant'}
+        ]
     }
     {
       comment: 'Directiva'
-      match: '(DW) (0x[0-9A-F]{4})'
+      match: '(DW)\ +(0x[0-9A-F]{4})'
       captures:
         1: name: 'support.function.asm'
         2: name: 'bold.constant.language.asm'
@@ -70,34 +74,28 @@ repository:
         match: '#.*$'
     }
     hexaConstant:{
-      comment: 'Constantes inmediatas'
-      name: 'bold.constant.language.asm'
-      match: '0x[0-9A-F]{4}'
+      comment: 'Constantes'
+      match: '(\\[{0,2})\ *(0x[0-9A-F]{4})\ *(\\]{0,2})'
+      captures:
+        1: name: 'string.regexp.character-class.asm'
+        2: name: 'bold.constant.language.asm'
+        3: name: 'string.regexp.character-class.asm'
     }
     registry:{
       comment: 'Registros'
-      match: '(\\[*)(R[0-7])(\\]*)'
+      match: '(\\[{0,2})\ *(R[0-7])\ *((\\+)\ *(0x[0-9A-F]{4}))?\ *(\\]{0,2})'
       captures:
         1: name: 'string.regexp.character-class.asm'
         2: name: 'bold.variable.asm'
-        3: name: 'string.regexp.character-class.asm'
+        4: name: 'string.regexp.character-class.asm'
+        5: name: 'bold.constant.language.asm'
+        6: name: 'string.regexp.character-class.asm'
     }
     tag:{
       comment: 'Etiquetas'
-      match: '(\\[*)([A-Za-z]+)(\\]*)'
+      match: '(\\[{0,2})\ *([A-Za-z]+)\ *(\\]{0,2})'
       captures:
         1: name: 'string.regexp.character-class.asm'
-        2: patterns:[
-          {
-            comment: 'Variable'
-            name: 'bold.keyword.control.asm'
-            match:'[A-Z]+'
-          }
-          {
-            comment: 'Etiqueta regular'
-            name: 'keyword.control.asm'
-            match: '[A-Za-z]+'
-          }
-        ]
+        2: name: 'keyword.control.asm'
         3: name: 'string.regexp.character-class.asm'
     }
