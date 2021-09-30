@@ -6,6 +6,7 @@
 
 La sencilla sintaxis de assembly con lo justo y necesario para Orga1. Queria poder escribirlo y que tuviera colorsitos.\
 Como no tenia ni idea como hacer esto copie por completo el diseño del paquete para TAD de Algo2 hecho por [luisbustamante097](https://github.com/luisbustamante097/language-tad-aed2). Gracias Luis.\
+Planeo seguir modificando y expandiendo el paquete cuando me vaya dando cuenta que le falta para cumplir con la primer oracion, tener lo lo justo y necesario para Orga1.
 \
 ![Demostracion](/test/test.png)\
 
