@@ -32,9 +32,12 @@
     'LOAD':
       'prefix': 'LOAD'
       'body': 'LOAD ${1:DESTINO}, ${2:FUENTE}'
+    'SHR':
+      'prefix': 'SHR'
+      'body': 'SHR ${1:REGISTRO}, ${2:CANTIDAD}'
     'SHL':
       'prefix': 'SHL'
-      'body': 'SHL ${1:DESTINO}, ${2:FUENTE}'
+      'body': 'SHL ${1:REGISTRO}, ${2:CANTIDAD}'
     'SET':
       'prefix': 'SET'
       'body': 'SET ${1:DESTINO}, ${2:FUENTE}'
