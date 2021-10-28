@@ -33,7 +33,7 @@ patterns: [
     }
     {
       comment: 'Funciones con 1 operando'
-      match: '(NEG|NOT|JMP|CALL|INC|DEC|SIG)\ +([0-9a-zA-Z\\[\\]\\+\ ]*)'
+      match: '(NEG|NOT|JMP|CALL|INC|DEC|SIG|PUSH|POP)\ +([0-9a-zA-Z\\[\\]\\+\ ]*)'
       captures:
         1: name: 'support.function.asm'
         2: patterns:[
@@ -43,8 +43,8 @@ patterns: [
         ]
     }
     {
-      comment: 'Funcion return'
-      match: 'RET'
+      comment: 'Funciones sin operandos'
+      match: '(RET|IRET|CLI|STI)'
       name: 'support.function.asm'
     }
     {

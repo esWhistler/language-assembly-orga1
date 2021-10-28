@@ -49,13 +49,19 @@
       'body': 'JMP ${1:FUENTE}'
     'CALL':
       'prefix': 'CALL'
-      'body': 'CALL ${1:REG}'
+      'body': 'CALL ${1:REGISTRO}'
     'INC':
       'prefix': 'INC'
       'body': 'INC ${1:REG}'
     'DEC':
       'prefix': 'DEC'
       'body': 'DEC ${1:FUENTE}'
+    'PUSH':
+      'prefix': 'PUSH'
+      'body': 'PUSH ${1:REGISTRO}'
+    'POP':
+      'prefix': 'POP'
+      'body': 'POP ${1:REGISTRO}'
     'JE':
       'prefix': 'JE'
       'body': 'JE ${1:ETIQUETA}'
