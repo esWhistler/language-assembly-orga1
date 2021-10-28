@@ -16,7 +16,7 @@ patterns: [
     }
     {
       comment: 'Funciones con 2 operandos'
-      match: '(MOV|ADD|SUB|AND|OR|CMP|ADDC|ADC|XOR|STR|LOAD|STRr|LOADr|SHR|SHL|SET|MIX)\ +([0-9a-zA-Z\\[\\]\\+\ ]*)(,)\ *([0-9a-zA-Z\\[\\]\\+\ ]*)'
+      match: '(MOV|ADD|SUB|AND|OR|CMP|ADDC|ADC|XOR|STR|LOAD|STRr|LOADr|SHR|SHL|SET|MIX)\ +([0-9a-zA-Z_\\[\\]\\+\ ]*)(,)\ *([0-9a-zA-Z_\\[\\]\\+\ ]*)'
       captures:
         1: name: 'support.function.asm'
         2: patterns:[
@@ -33,7 +33,7 @@ patterns: [
     }
     {
       comment: 'Funciones con 1 operando'
-      match: '(NEG|NOT|JMP|CALL|INC|DEC|SIG|PUSH|POP)\ +([0-9a-zA-Z\\[\\]\\+\ ]*)'
+      match: '(NEG|NOT|JMP|CALL|INC|DEC|SIG|PUSH|POP)\ +([0-9a-zA-Z_\\[\\]\\+\ ]*)'
       captures:
         1: name: 'support.function.asm'
         2: patterns:[
@@ -49,7 +49,7 @@ patterns: [
     }
     {
       comment: 'Saltos condicionales'
-      match: '(JE|JNE|JLE|JG|JL|JGE|JLEU|JGU|JCS|JNEG|JVS|JC|JZ|JN)\ +([0-9a-zA-Z\\[\\]\\+\ ]*)'
+      match: '(JE|JNE|JLE|JG|JL|JGE|JLEU|JGU|JCS|JNEG|JVS|JC|JZ|JN)\ +([0-9a-zA-Z_\\[\\]\\+\ ]*)'
       captures:
         1: name: 'support.function.asm'
         2: patterns:[
@@ -93,7 +93,7 @@ repository:
     }
     tag:{
       comment: 'Etiquetas'
-      match: '(\\[{0,2})\ *([A-Za-z]+)\ *(\\]{0,2})'
+      match: '(\\[{0,2})\ *([A-Za-z_]+)\ *(\\]{0,2})'
       captures:
         1: name: 'string.regexp.character-class.asm'
         2: name: 'keyword.control.asm'
